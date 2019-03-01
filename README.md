@@ -16,11 +16,11 @@ popular songs.
 
 
 #### Intended Audience
-Our primary target audience is music listeners who are interested in the audio features of
-songs and want to know more about the song....
-
+Our primary target audience is music listeners who are curious about how popular music varies in different locations and what characteristics popular songs tend to have. In particular, we hope to find an audience in people who are passionate about listening to music and open to exploring new songs.
 
 #### Specific Questions
-
+What makes music popular?
+What music is popular in different countries?
+How can related songs be found or generated?
 
 ## Technical Description
