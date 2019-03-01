@@ -21,9 +21,11 @@ Our primary target audience is music listeners who are curious about how popular
 
 #### Specific Questions
 Our data will provide answers to the following questions:
-- What aspects of music makes it popular/What are some characteristics of popular music?
-- What music is popular in different countries/locations?
+- What aspects of music makes it popular, and what are some characteristics of popular music in general?
+- What music is popular in different countries?
 - How can related songs be found or generated?
 
 
 ## Technical Description
+Both of our datasets are static .csv files, which means we won't be using an API. One of the things we were hoping to do with these datasets is to see what aspects of songs land them on the popular charts, so we would need to join our datasets by songs for sure. One major challenge this might end up resulting in is that songs in one dataset might not be in another, which would limit our ability to analyze the songs across both datasets. However, since these datasets were established around the same time, we hope to at least be able to analyze songs on the US/English-dominated charts, if some foreign charts have a lot of songs not on the other dataset.
+Besides `dplyr`, we know we will be using `shiny` for sure. One of the visualizations we might want to do involves adjusting either the location or the day to see the top charts, which requires an interactive interface to do so.
