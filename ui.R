@@ -8,6 +8,8 @@ library(tidyverse)
 library(songsim)
 library(syuzhet)
 
+us_top <- read.csv("data/us_top200.csv", stringsAsFactors = FALSE)
+
 shinyUI(navbarPage(
   "Analyzing Music",
   mainPanel(
