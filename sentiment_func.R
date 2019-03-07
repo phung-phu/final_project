@@ -17,7 +17,7 @@ get_sent <- function(artist_name, song_name) {
 
 get_graph <- function(nrc) {
   barplot(
-    sort(colSums(prop.table(n[, 1:8]))), 
+    sort(colSums(prop.table(nrc[, 1:8]))), 
     horiz = TRUE, 
     cex.names = 0.7, 
     las = 1, 
@@ -26,5 +26,5 @@ get_graph <- function(nrc) {
 }
 
 # Test Code
-n <- get_sent("Vance Joy", "Emmylou")
-get_graph(n)
+#n <- get_sent("Post Malone", "rockstar")
+#get_graph(n)

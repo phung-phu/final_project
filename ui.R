@@ -14,7 +14,10 @@ shinyUI(navbarPage(
   "Analyzing Music",
   mainPanel(
     # home page
-    h1("Analyzing Music")
+    h1("Analyzing Music"),
+    h3("About the Project"),
+    h3("Findings"),
+    h3("About Us")
   ),
   tabPanel(
     "Individual Song Analysis",
@@ -64,7 +67,8 @@ shinyUI(navbarPage(
         p("The matrix has an option to show color, and with color,
           a black square on the matrix means the word appears only once in
           the matrix, so most verses are black. A broken diagonal is
-          representative of a verse similar to the chorus.")
+          representative of a verse similar to the chorus."),
+        h3("Mood Graph Explanation")
       )
     )
   )#, - insert more tabs

@@ -23,12 +23,11 @@ shinyServer(function(input, output) {
     sim_p
   })
   output$mood_graph <- renderPlot({
-    filtered <- us_top %>% 
+    find_song <- us_top %>% 
       filter(Track.Name == input$selSong)
-    artist_name <- filtered$Artist
-    song_name <- filtered$Track.Name
+    artist_name <- find_song$Artist
+    song_name <- find_song$Track.Name
     sen <- get_sent(artist_name, song_name)
-    sen_g <- get_graph(sen)
-    sen_g
+    get_graph(sen)
   })
 })
