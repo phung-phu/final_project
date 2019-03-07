@@ -5,7 +5,7 @@ Position,Track.Name,Artist,Streams,URL,Date,Region
 4,Bartier Cardi (feat. 21 Savage),Cardi B,1093964,https://open.spotify.com/track/75FDPwaULRdYDn4StFN2rT,1/9/18,us
 5,I Fall Apart,Post Malone,993683,https://open.spotify.com/track/75ZvA4QfFiZvzhj2xkaWAh,1/9/18,us
 6,All The Stars (with SZA),Kendrick Lamar,960401,https://open.spotify.com/track/66kQ7wr4d2LwwSjr7HXcyr,1/9/18,us
-7,Ric Flair Drip (& Metro Boomin),Offset,953289,https://open.spotify.com/track/7sO5G9EABYOXQKNPNiE9NR,1/9/18,us
+7,Ric Flair Drip (& Metro Boomin),Offset and Metro Boomin,953289,https://open.spotify.com/track/7sO5G9EABYOXQKNPNiE9NR,1/9/18,us
 8,Him & I (with Halsey),G-Eazy,930717,https://open.spotify.com/track/5k38wzpLb15YgncyWdTZE4,1/9/18,us
 9,Havana,Camila Cabello,856493,https://open.spotify.com/track/0ofbQMrRDsUaVKq2mGLEAb,1/9/18,us
 10,LOVE. ,Kendrick Lamar,844540,https://open.spotify.com/track/6PGoSes0D9eUDeeAafB2As,1/9/18,us
@@ -54,13 +54,13 @@ Position,Track.Name,Artist,Streams,URL,Date,Region
 53,Sorry Not Sorry,Demi Lovato,422205,https://open.spotify.com/track/3m660poUr1chesgkkjQM7P,1/9/18,us
 54,Jocelyn Flores,XXXTENTACION,419922,https://open.spotify.com/track/7m9OqQk4RVRkw9JJdeAw96,1/9/18,us
 55,Saint,Huncho Jack,415813,https://open.spotify.com/track/7foypmc7KZyU716Yv63BPe,1/9/18,us
-56,Perfect Duet (Ed Sheeran & BeyoncÃ©),Ed Sheeran,411916,https://open.spotify.com/track/1bhUWB0zJMIKr9yVPrkEuI,1/9/18,us
+56,Perfect Duet (Ed Sheeran & Beyoncê©),Ed Sheeran,411916,https://open.spotify.com/track/1bhUWB0zJMIKr9yVPrkEuI,1/9/18,us
 57,Fuck Love (feat. Trippie Redd),XXXTENTACION,403877,https://open.spotify.com/track/7AQim7LbvFVZJE3O8TYgf2,1/9/18,us
 58,Rubbin Off The Paint,YBN Nahmir,396376,https://open.spotify.com/track/0taOCiup4HNG9LmbduVlJj,1/9/18,us
 59,DNA.,Kendrick Lamar,395580,https://open.spotify.com/track/6HZILIRieu8S0iqY8kIKhj,1/9/18,us
 60,Designer,Lil Pump,394562,https://open.spotify.com/track/1LXbv9jiTtdBdHadZ317Gt,1/9/18,us
 61,Rewrite The Stars,Zac Efron,391661,https://open.spotify.com/track/630sXRhIcfwr2e4RdNtjKN,1/9/18,us
-62,Ghostface Killers,21 Savage,384663,https://open.spotify.com/track/5u6vkDnOyaf8LsteDAj2ub,1/9/18,us
+62,Ghostface Killers,"21 Savage, Offset and Metro Boomin",384663,https://open.spotify.com/track/5u6vkDnOyaf8LsteDAj2ub,1/9/18,us
 63,Nowadays (feat. Landon Cube),Lil Skies,382679,https://open.spotify.com/track/689uBlyIufk2LUhAwjny4w,1/9/18,us
 64,This Is Me,Keala Settle,371338,https://open.spotify.com/track/2xGjteMU3E1tkEPVFBO08U,1/9/18,us
 65,Slippery (feat. Gucci Mane),Migos,367838,https://open.spotify.com/track/6p8NuHm8uCGnn2Dtbtf7zE,1/9/18,us
@@ -75,7 +75,7 @@ Position,Track.Name,Artist,Streams,URL,Date,Region
 74,Dubai Shit,Huncho Jack,337086,https://open.spotify.com/track/6urLjX35oXXRYtcH1b3dCh,1/9/18,us
 75,"Home (with Machine Gun Kelly, X Ambassadors & Bebe Rexha)",Machine Gun Kelly,335643,https://open.spotify.com/track/0OI7AFifLSoGzpb8bdBLLV,1/9/18,us
 76,Real Friends,Camila Cabello,335173,https://open.spotify.com/track/4V6MRo0CEAC9MwAm7dkPuL,1/9/18,us
-77,Go Legend (& Metro Boomin),Big Sean,332617,https://open.spotify.com/track/3wAI7MIQtTgwcRmwchPZBc,1/9/18,us
+77,Go Legend,Big Sean and Metro Boomin,332617,https://open.spotify.com/track/3wAI7MIQtTgwcRmwchPZBc,1/9/18,us
 78,Feel It Still,Portugal. The Man,327023,https://open.spotify.com/track/6QgjcU0zLnzq5OrUoSZ3OK,1/9/18,us
 79,Believer,Imagine Dragons,320065,https://open.spotify.com/track/0CcQNd8CINkwQfe1RDtGV6,1/9/18,us
 80,Never Enough,Loren Allred,315530,https://open.spotify.com/track/0Gl5s8IhMmQE5YQwM8Qx1J,1/9/18,us
@@ -101,7 +101,7 @@ Position,Track.Name,Artist,Streams,URL,Date,Region
 100,Mask Off,Future,277587,https://open.spotify.com/track/0VgkVdmE4gld66l8iyGjgx,1/9/18,us
 101,Attention,Charlie Puth,276743,https://open.spotify.com/track/4iLqG9SeJSnt0cSPICSjxv,1/9/18,us
 102,Sauce It Up,Lil Uzi Vert,274608,https://open.spotify.com/track/1uL78kFWxhz3umTMWJu8n5,1/9/18,us
-103,Say You Won't Let Go,James Arthur,273501,https://open.spotify.com/track/5uCax9HTNlzGybIStD3vDh,1/9/18,us
+103,Say You Wont Let Go,James Arthur,273501,https://open.spotify.com/track/5uCax9HTNlzGybIStD3vDh,1/9/18,us
 104,Delicate,Taylor Swift,272719,https://open.spotify.com/track/6NFyWDv5CjfwuzoCkw47Xf,1/9/18,us
 105,Corazon,Maluma,270078,https://open.spotify.com/track/4lESS6vuruP6a79KWRaQou,1/9/18,us
 106,Relationship (feat. Future),Young Thug,269718,https://open.spotify.com/track/25oOaleife6E2MIKmFkPvg,1/9/18,us
@@ -110,10 +110,10 @@ Position,Track.Name,Artist,Streams,URL,Date,Region
 109,So Far Away,Martin Garrix,264129,https://open.spotify.com/track/0OlnLZY4cmQzT6ZGttvWBM,1/9/18,us
 110,What Ifs,Kane Brown,262822,https://open.spotify.com/track/7zVCrzzEJU7u24sbJPXA5W,1/9/18,us
 111,Dusk Till Dawn - Radio Edit,ZAYN,262053,https://open.spotify.com/track/1j4kHkkpqZRBwE0A4CN4Yv,1/9/18,us
-112,That's What I Like,Bruno Mars,261660,https://open.spotify.com/track/0KKkJNfGyhkQ5aFogxQAPU,1/9/18,us
+112,Thats What I Like,Bruno Mars,261660,https://open.spotify.com/track/0KKkJNfGyhkQ5aFogxQAPU,1/9/18,us
 113,La Modelo,Ozuna,259295,https://open.spotify.com/track/2m2ZGfJcs3lHWNPzhWH3XH,1/9/18,us
 114,Transportin',Kodak Black,258274,https://open.spotify.com/track/1WIZiOuNO3woKfdlSK2gNn,1/9/18,us
-115,It's A Vibe,2 Chainz,257521,https://open.spotify.com/track/6H0AwSQ20mo62jGlPGB8S6,1/9/18,us
+115,Its A Vibe,2 Chainz,257521,https://open.spotify.com/track/6H0AwSQ20mo62jGlPGB8S6,1/9/18,us
 116,Strip That Down,Liam Payne,253524,https://open.spotify.com/track/6EpRaXYhGOB3fj4V2uDkMJ,1/9/18,us
 117,Everybody Dies In Their Nightmares,XXXTENTACION,252441,https://open.spotify.com/track/3GVkPk8mqxz0itaAriG1L7,1/9/18,us
 118,Icon,Jaden Smith,251668,https://open.spotify.com/track/22nyEAEM29tcBRhukR089b,1/9/18,us
@@ -126,7 +126,7 @@ Position,Track.Name,Artist,Streams,URL,Date,Region
 125,Come Alive,Hugh Jackman,247458,https://open.spotify.com/track/5xNUR50KxswPRAvx7S163g,1/9/18,us
 126,Bounce Back,Big Sean,246927,https://open.spotify.com/track/0SGkqnVQo9KPytSri1H6cF,1/9/18,us
 127,Modern Slavery,Huncho Jack,246570,https://open.spotify.com/track/7J6bnDDitOwfelaJNixHhL,1/9/18,us
-128,I'm the One,DJ Khaled,243736,https://open.spotify.com/track/3DXncPQOG4VBw3QHh3S817,1/9/18,us
+128,Im the One,DJ Khaled,243736,https://open.spotify.com/track/3DXncPQOG4VBw3QHh3S817,1/9/18,us
 129,Bad and Boujee (feat. Lil Uzi Vert),Migos,243022,https://open.spotify.com/track/4Km5HrUvYTaSUfiSGPJeQR,1/9/18,us
 130,do re mi,blackbear,241447,https://open.spotify.com/track/3Q3myFA7q4Op95DOpHplaY,1/9/18,us
 131,Despacito - Remix,Luis Fonsi,241424,https://open.spotify.com/track/5CtI0qwDJkDQGwXD1H1cLb,1/9/18,us
@@ -157,25 +157,25 @@ Position,Track.Name,Artist,Streams,URL,Date,Region
 156,Greatest Love Story,LANCO,210671,https://open.spotify.com/track/0kdiUZDcLIFw0Buo9r0Q4z,1/9/18,us
 157,beibs in the trap,Travis Scott,210252,https://open.spotify.com/track/0ESJlaM8CE1jRWaNtwSNj8,1/9/18,us
 158,PRBLMS,6LACK,209838,https://open.spotify.com/track/4AtZRwSR8BOTTQg5ihSggt,1/9/18,us
-159,There's Nothing Holdin' Me Back,Shawn Mendes,208332,https://open.spotify.com/track/79cuOz3SPQTuFrp8WgftAu,1/9/18,us
+159,Theres Nothing Holdin Me Back,Shawn Mendes,208332,https://open.spotify.com/track/79cuOz3SPQTuFrp8WgftAu,1/9/18,us
 160,20 Min,Lil Uzi Vert,207418,https://open.spotify.com/track/0uxSUdBrJy9Un0EYoBowng,1/9/18,us
 161,Anywhere,Rita Ora,206492,https://open.spotify.com/track/7EI6Iki24tBHAMxtb4xQN2,1/9/18,us
 162,Starboy,The Weeknd,206136,https://open.spotify.com/track/5aAx2yezTd8zXrkmtKl66Z,1/9/18,us
-163,Don't,Bryson Tiller,204253,https://open.spotify.com/track/3pXF1nA74528Edde4of9CC,1/9/18,us
+163,Dont,Bryson Tiller,204253,https://open.spotify.com/track/3pXF1nA74528Edde4of9CC,1/9/18,us
 164,Issues,Julia Michaels,204104,https://open.spotify.com/track/7vu0JkJh0ldukEYbTVcqd0,1/9/18,us
 165,No Option,Post Malone,203577,https://open.spotify.com/track/6M0IsaUX4GNyto4niSegfI,1/9/18,us
 166,Glorious (feat. Skylar Grey),Macklemore,203479,https://open.spotify.com/track/0CokSRCu5hZgPxcZBaEzVE,1/9/18,us
 167,Yours,Russell Dickerson,203009,https://open.spotify.com/track/6RSNKGdv3nDTHqgw4bdzyF,1/9/18,us
 168,Fake Love,Drake,202374,https://open.spotify.com/track/343YBumqHu19cGoGARUTsd,1/9/18,us
 169,Se Preparo,Ozuna,202055,https://open.spotify.com/track/1m69ELEgE6k5ZWsap40ozt,1/9/18,us
-170,In Case You Didn't Know,Brett Young,201584,https://open.spotify.com/track/10M2Ex445zw585Ducldzkw,1/9/18,us
-171,Lemon,N.E.R.D,200566,https://open.spotify.com/track/4PpuH4mxL0rD35mOWaLoKS,1/9/18,us
-172,Caroline,AminÃ©,200412,https://open.spotify.com/track/5hTpBe8h35rJ67eAWHQsJx,1/9/18,us
+170,In Case You Didnt Know,Brett Young,201584,https://open.spotify.com/track/10M2Ex445zw585Ducldzkw,1/9/18,us
+171,Lemon,NERD,200566,https://open.spotify.com/track/4PpuH4mxL0rD35mOWaLoKS,1/9/18,us
+172,Caroline,Amine,200412,https://open.spotify.com/track/5hTpBe8h35rJ67eAWHQsJx,1/9/18,us
 173,You Broke Up with Me,Walker Hayes,197560,https://open.spotify.com/track/5jZF1nvKORdaHNjNNMRbFl,1/9/18,us
 174,Naked,James Arthur,197533,https://open.spotify.com/track/7krbSH3rd8lhIZvuzTV3Bl,1/9/18,us
 175,Myself,NAV,197239,https://open.spotify.com/track/05nbZ1xxVNwUTcGwLbp7CN,1/9/18,us
 176,Exchange,Bryson Tiller,196763,https://open.spotify.com/track/43PuMrRfbyyuz4QpZ3oAwN,1/9/18,us
-177,Poles 1469,Trippie Redd,194786,https://open.spotify.com/track/4fC5jw1TI59GH1emfN1wtk,1/9/18,us
+177,Poles1469,Trippie Redd,194786,https://open.spotify.com/track/4fC5jw1TI59GH1emfN1wtk,1/9/18,us
 178,Craving You,Thomas Rhett,194337,https://open.spotify.com/track/2d48mamATjby7wgPjdrSOQ,1/9/18,us
 179,First Day Out,Tee Grizzley,194222,https://open.spotify.com/track/3muBQDekYAg7jm6hDu6R0Z,1/9/18,us
 180,Bring It Back (with Drake & Mike WiLL Made-It),Trouble,193563,https://open.spotify.com/track/6wQlT5VQU5eM4NYBIJ6wO5,1/9/18,us
@@ -198,4 +198,4 @@ Position,Track.Name,Artist,Streams,URL,Date,Region
 197,All On Me,Devin Dawson,184519,https://open.spotify.com/track/2mfahQ0EaaZWq4cFNg6A1o,1/9/18,us
 198,From The D To The A (feat. Lil Yachty),Tee Grizzley,184428,https://open.spotify.com/track/2NyrXRn4tancYPW6JwtTl2,1/9/18,us
 199,Now Or Never,Halsey,184394,https://open.spotify.com/track/7i2DJ88J7jQ8K7zqFX2fW8,1/9/18,us
-200,So Good (& Metro Boomin),Big Sean,184149,https://open.spotify.com/track/0fWBFDRTIuk8ZgNdZqhCer,1/9/18,us
+200,So Good,Big Sean and Metro Boomin,184149,https://open.spotify.com/track/0fWBFDRTIuk8ZgNdZqhCer,1/9/18,us
