@@ -37,7 +37,7 @@ find_sim_val <- function(artist_name, song_name) {
 # df <- data.frame(v)
 #write.csv("data/calculated_sim.csv")
 
-# vals <- read.csv("data/calculated_sim.csv", stringsAsFactors = FALSE)
+vals <- read.csv("data/calculated_sim.csv", stringsAsFactors = FALSE)
 
 # Test Code
-# find_sim_val("Bruno Mars", "Thats What I Like")
+find_sim("Taylor Swift", "We Are Never Ever Getting Back Together")
