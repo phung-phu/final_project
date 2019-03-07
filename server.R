@@ -11,7 +11,7 @@ library(syuzhet)
 source("sentiment_func.R")
 source("sim_function.R")
 
-us_top <- read.csv("us_top200.csv", stringsAsFactors = FALSE)
+us_top <- read.csv("data/us_top200.csv", stringsAsFactors = FALSE)
 
 shinyServer(function(input, output) {
   output$sim_plot <- renderPlot({
