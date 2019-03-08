@@ -9,6 +9,9 @@ library(songsim)
 library(syuzhet)
 
 us_top <- read.csv("data/us_top200.csv", stringsAsFactors = FALSE)
+us_top <- us_top[order(us_top$Track.Name),]
+
+world_top <- read.csv("data/world_charts_1_9_2018.csv", stringsAsFactors = FALSE)
 
 shinyUI(navbarPage(
   "Analyzing Music",
@@ -36,7 +39,7 @@ shinyUI(navbarPage(
         h2("Mood Graph"),
         plotOutput("mood_graph"),
         h3("SongSim Explanation"),
-        p("A SongSim Matrix is a particular way to visualize a song. 
+        p("A SongSim Matrix is a particular way to visualize a song.
           In particular, it demonstrates how repetitive song lyrics are.
           To get the lyrics in the first place, the ",
           a("R genius package",
@@ -69,7 +72,16 @@ shinyUI(navbarPage(
           the matrix, so most verses are black. A broken diagonal is
           representative of a verse similar to the chorus."),
         h3("Mood Graph Explanation")
-      )
+        )
+        )
+        ),
+  tabPanel(
+    "Table Analysis",
+    titlePanel("Top Song in each Country"),
+    fluidPage(
+        dataTableOutput("table")
+
     )
-  )#, - insert more tabs
-))
+  )
+)
+)
