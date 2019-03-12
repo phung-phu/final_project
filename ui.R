@@ -23,9 +23,34 @@ shinyUI(navbarPage(
       mainPanel(
         h3("Project Description"),
         br(),
-        h3("Major question we are answering..."),
+        h3("What Questions Do We Hope to Answer?"),
+        h4("What are some general characteristics of popular music?"),
+        p("We answered this question by looking doing some individual song
+          analysis. We did this by looking at not just the repetition tendencies
+          in songs, but also the moods that their lyrics conveyed. While moods in
+          different songs were all over the board and couldn't be summarized, the moods
+          in each individual pop song on the US Top 200 on 1/9/2018 can be visualized
+          from our project. We also looked at how repeated songs are by creating
+          Song Sim Matrices with song lyrics, and while the repetitiveness average
+          was relatively low at 1.99%, there are certainly outliers that exceed 
+          above 10% repetitiveness."),
+        h4("What music is popular in different countries?"),
+        p("Answer"),
+        h4("What makes music popular?"),
+        p("Answer"),
         br(),
-        h3("Technical Description")
+        h3("Technical Description"),
+        p("Beyond ", code("shiny"), " and ", code("dplyr"), " we also used packages like", 
+          code("genius"), ", ", code("songsim"), ", ",
+          code("syuzhet"), ", ", code("countrycode"), ", and ",
+          code("DT"), "to complete this project. ", code("genius"),
+          " was helpful in particular because it gathered lyrics for each song,
+          which we could then do a lot with, such as repetition analysis with ",
+          code("songsim"), " and mood analysis with ", code("syuzhet"),
+          ". Other packages helped us with wrangling the data and then
+          forming data tables."),
+        p("Both of our datasets were static ", code(".csv"), " files which
+          meant we did not need to use APIs. ")
       )
   ),
   

@@ -21,9 +21,9 @@ Our primary target audience is music listeners who are curious about how popular
 
 #### Specific Questions
 Our data will provide answers to the following questions:
-- What aspects of music makes it popular, and what are some characteristics of popular music in general?
+- What aspects of music makes it popular?
+- What are some characteristics of popular music in general?
 - What music is popular in different countries?
-- How can related songs be found or generated?
 
 
 ## Technical Description
