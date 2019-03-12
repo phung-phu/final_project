@@ -18,10 +18,24 @@ shinyUI(navbarPage(
   mainPanel(
     # home page
     h1("Analyzing Music"),
+    br(),
     h3("About the Project"),
-    h3("Findings"),
+    h3("Individual Song Analysis"),
+    h3("Table Analysis"),
     h3("About Us")
   ),
+  tabPanel(
+    "About the Project",
+    titlePanel("Project Overview"),
+      mainPanel(
+        h3("Project Description"),
+        br(),
+        h3("Major question we are answering..."),
+        br(),
+        h3("Technical Description")
+      )
+  ),
+  
   tabPanel(
     "Individual Song Analysis",
     titlePanel("Repetition and Mood in Chart Toppers"),
