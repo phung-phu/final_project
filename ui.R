@@ -82,6 +82,17 @@ shinyUI(navbarPage(
         dataTableOutput("table")
 
     )
+  ),
+  tabPanel(
+    "About Us",
+    titlePanel(strong("ABOUT US")),
+      mainPanel(
+        h2("Who We Are", align = "center"),
+        h3("We are Team Starfish from Info 201 Section BE", align = "center"),
+        br(),
+        h4("Meet Team Members:")
+      )
+    
   )
 )
 )
