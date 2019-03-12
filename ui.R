@@ -8,6 +8,8 @@ library(tidyverse)
 library(songsim)
 library(syuzhet)
 
+source("sim_function.R")
+
 us_top <- read.csv("data/us_top200.csv", stringsAsFactors = FALSE)
 us_top <- us_top[order(us_top$Track.Name),]
 
@@ -15,15 +17,6 @@ world_top <- read.csv("data/world_charts_1_9_2018.csv", stringsAsFactors = FALSE
 
 shinyUI(navbarPage(
   "Analyzing Music",
-  mainPanel(
-    # home page
-    h1("Analyzing Music"),
-    br(),
-    h3("About the Project"),
-    h3("Individual Song Analysis"),
-    h3("Table Analysis"),
-    h3("About Us")
-  ),
   tabPanel(
     "About the Project",
     titlePanel("Project Overview"),
@@ -85,7 +78,35 @@ shinyUI(navbarPage(
           a black square on the matrix means the word appears only once in
           the matrix, so most verses are black. A broken diagonal is
           representative of a verse similar to the chorus."),
-        h3("Mood Graph Explanation")
+        h4("Colors"),
+        p("Each different color represents a new distinct word in the song."),
+        h4("Repetitiveness"),
+        p("Repetitiveness is simply a way to quantify the matrices formed.
+          For every empty cell, there is a value of 0 and for every colored
+          in cell, there is a value of 1, so the average would be a decimal
+          between 0 and 1. Multiplied by 100, the repetitveness would be a
+          percentage, illustrating what percentage of the song is being 
+          repeated."),
+        h3("Patterns Seen"),
+        p("Overall, the average repetitiveness of the songs on the US Top 200
+          Chart was found to be 1.99%. This number is relatively low. However,
+there are definitetly outliers in this dataset, and individual repetitivness values
+          can be seen in the table below. Songs can also be played by clicking on the
+          song title in the table."),
+        h2("Repetitivenss in US Top 200 1/9/18"),
+        dataTableOutput("rep_table"),
+        h3("Mood Graph Explanation"),
+        p("The mood graph is based on the same lyrics gathered for the SongSim
+          Matrix, but uses the ",
+          a("syuzhet package",
+            href = "https://www.rdocumentation.org/packages/syuzhet/versions/1.0.4"),
+          " to perform an ",
+          a("nrc analysis",
+            href = "http://www.saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"),
+          " in order to find the moods of the lyrics. For every word in a song that
+          falls in one of the 8 emotions the analysis categorizes into (anger, 
+          anticipation, disgust, fear, joy, sadness, surprise, trust), a tally is added,
+          and these tallies are graphed into the mood graphs seen in this song analysis.")
         )
         )
         ),

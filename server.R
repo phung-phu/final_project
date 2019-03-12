@@ -19,6 +19,8 @@ world_top <- world_top %>%
   filter(Region != "global")
 world_top <- mutate(world_top, country_name = countrycode(world_top$Region, 
                                                           "iso2c", "country.name"))
+rep <- read.csv("repetitiveness.csv", stringsAsFactors = FALSE) %>% 
+  select(Song, Artist, Repetitiveness)
 
 shinyServer(function(input, output) {
   output$sim_plot <- renderPlot({
@@ -36,6 +38,9 @@ shinyServer(function(input, output) {
     song_name <- find_song$Track.Name
     sen <- get_sent(artist_name, song_name)
     get_graph(sen)
+  })
+  output$rep_table <- renderDataTable({
+    datatable(rep, escape = FALSE, options = list(dom = 'lrtp'))
   })
 
   top_by_region <- world_top %>%

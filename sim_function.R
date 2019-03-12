@@ -35,9 +35,18 @@ find_sim_val <- function(artist_name, song_name) {
 # ls[1:200]
 # v <- unlist(ls, use.names = FALSE)
 # df <- data.frame(v)
-#write.csv("data/calculated_sim.csv")
+# write.csv("data/calculated_sim.csv")
+# vals <- read.csv("data/calculated_sim.csv", stringsAsFactors = FALSE)
+# avg <- mean(vals$Repetitiveness)
+# colnames(vals) <- c("Position", "Repetitiveness")
+# us_top <- read.csv("data/us_top200.csv", stringsAsFactors = FALSE)
+# rep <- right_join(us_top, vals, by = "Position") %>% 
+#   mutate(Song = paste0("<a href =\"", URL, "\">", Track.Name, "</a>")) %>% 
+#   select(Song, Artist, Repetitiveness)
+# write.csv(rep, "repetitiveness.csv")
 
-vals <- read.csv("data/calculated_sim.csv", stringsAsFactors = FALSE)
+# Avg repetitiveness
+# avg_rep <- "1.99%"
 
 # Test Code
-find_sim("Taylor Swift", "We Are Never Ever Getting Back Together")
+# find_sim("Taylor Swift", "We Are Never Ever Getting Back Together")
