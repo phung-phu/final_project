@@ -21,9 +21,7 @@ shinyUI(navbarPage(
     "About the Project",
     titlePanel("Project Overview"),
       mainPanel(
-        h3("Project Description"),
-        br(),
-        h3("What Questions Do We Hope to Answer?"),
+        h3("Project Description - What Questions Do We Hope to Answer?"),
         h4("What are some general characteristics of popular music?"),
         p("We answered this question by looking doing some individual song
           analysis. We did this by looking at not just the repetition tendencies
@@ -35,9 +33,17 @@ shinyUI(navbarPage(
           was relatively low at 1.99%, there are certainly outliers that exceed 
           above 10% repetitiveness."),
         h4("What music is popular in different countries?"),
-        p("Answer"),
+        p("The popularity of music is widely spreaded, as when viewing table of 
+          Top Song in Each Country, we can clearly see that the song name and artist
+          shown for each country are mostly different, without much repetition.
+          Therefore, we conclude that music popularity is widespread."),
         h4("What makes music popular?"),
-        p("Answer"),
+        p("Music is overall really popular as displayed on Spotify. We can determine if a song
+          is popular by looking at the table analysis, where selecting different countries
+          allow you to see corresponding top song lists. Songs appear on a country's
+          top lists represent their popularity in that country; if some songs appear
+          on the top list for multiple countries, it is an illustration that they are
+          in high popularity in specific time among the world."),
         br(),
         h3("Technical Description"),
         p("Beyond ", code("shiny"), " and ", code("dplyr"), " we also used packages like", 
@@ -50,7 +56,9 @@ shinyUI(navbarPage(
           ". Other packages helped us with wrangling the data and then
           forming data tables."),
         p("Both of our datasets were static ", code(".csv"), " files which
-          meant we did not need to use APIs. ")
+          meant we did not need to use APIs. Statistical analysis are done
+          by table analysis of top songs and graphs demonstrating individual
+          song analysis.")
       )
   ),
   
