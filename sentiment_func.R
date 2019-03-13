@@ -27,5 +27,5 @@ get_graph <- function(nrc) {
 }
 
 # Test Code
-n <- get_sent("Post Malone", "rockstar")
+n <- get_sent("Ed Sheeran", "Give Me Love")
 get_graph(n)

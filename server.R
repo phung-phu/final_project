@@ -19,8 +19,12 @@ us_top <- read.csv("data/us_top200.csv", stringsAsFactors = FALSE)
 world_top <- read.csv("data/world_charts_1_9_2018.csv", stringsAsFactors = FALSE)
 world_top <- world_top %>%
   filter(Region != "global")
-world_top <- mutate(world_top, country_name = countrycode(world_top$Region, 
-                                                          "iso2c", "country.name"))
+world_top <- mutate(world_top, country_name = countrycode(
+  world_top$Region,
+  "iso2c", "country.name"
+))
+rep <- read.csv("repetitiveness.csv", stringsAsFactors = FALSE) %>%
+  select(Song, Artist, Repetitiveness)
 
 shinyServer(function(input, output) {
   output$sim_plot <- renderPlot({
@@ -39,13 +43,18 @@ shinyServer(function(input, output) {
     sen <- get_sent(artist_name, song_name)
     get_graph(sen)
   })
+  output$rep_table <- renderDataTable({
+    datatable(rep, escape = FALSE, options = list(dom = "lrtp"))
+  })
 
   top_by_region <- world_top %>%
     group_by(Region) %>%
     filter(Streams == max(Streams))
 
-  top_world_df <- data.frame(top_by_region$country_name, top_by_region$Streams,
-                             top_by_region$Track.Name, top_by_region$Artist)
+  top_world_df <- data.frame(
+    top_by_region$country_name, top_by_region$Streams,
+    top_by_region$Track.Name, top_by_region$Artist
+  )
 
   output$table <- renderDataTable({
     world_top_table <- datatable(top_world_df,
@@ -58,19 +67,19 @@ shinyServer(function(input, output) {
       )
     )
   })
-  
+
   # Artists with most number of streams worldwide
   most_streamed_artist <- reactive({
-    world_top %>%     
-      select(Track.Name, Artist, Streams, country_name) %>% 
-      group_by(Artist) %>% 
-      summarize(Streams = sum(Streams)) %>% 
-      arrange(-Streams) %>% 
-      head(input$top_num)  
-    })
+    world_top %>%
+      select(Track.Name, Artist, Streams, country_name) %>%
+      group_by(Artist) %>%
+      summarize(Streams = sum(Streams)) %>%
+      arrange(-Streams) %>%
+      head(input$top_num)
+  })
 
   output$streams <- renderPlot({
-    bar <- ggplot(most_streamed_artist(), aes(x = reorder(Artist, -Streams), y = Streams)) +    
+    bar <- ggplot(most_streamed_artist(), aes(x = reorder(Artist, -Streams), y = Streams)) +
       labs(
         # title = "Artists with the most streams worldwide",
         x = "Artist",
@@ -79,30 +88,30 @@ shinyServer(function(input, output) {
       geom_bar(stat = "identity", fill = "#1DB954")
     bar
   })
-  
-  #Songs with the most streams worldwide
+
+  # Songs with the most streams worldwide
   most_streamed_song <- reactive({
-    songs <- world_top %>% 
-      select(Track.Name, Artist, Streams, country_name) %>% 
-      group_by(Track.Name) %>% 
-      summarize(Streams = sum(Streams)) 
-    songs$Artist = lapply(songs$Track.Name, artist)
-    songs$Track_Artist = paste(songs$Track.Name, "-", songs$Artist)
-    songs %>% 
-      arrange(-Streams) %>% 
-      head(input$top_num) 
+    songs <- world_top %>%
+      select(Track.Name, Artist, Streams, country_name) %>%
+      group_by(Track.Name) %>%
+      summarize(Streams = sum(Streams))
+    songs$Artist <- lapply(songs$Track.Name, artist)
+    songs$Track_Artist <- paste(songs$Track.Name, "-", songs$Artist)
+    songs %>%
+      arrange(-Streams) %>%
+      head(input$top_num)
   })
-  
+
   # Get track artist name
   artist <- function(title) {
-    world_top %>% 
-      select(Track.Name, Artist) %>% 
-      filter(Track.Name == title) %>% 
-      head(1) %>% 
-      select(Artist) %>% 
+    world_top %>%
+      select(Track.Name, Artist) %>%
+      filter(Track.Name == title) %>%
+      head(1) %>%
+      select(Artist) %>%
       pull(Artist)
-    }
-  
+  }
+
   output$song_streams <- renderPlot({
     bar <- ggplot(most_streamed_song(), aes(x = reorder(Track_Artist, -Streams), y = Streams)) +
       labs(
@@ -114,13 +123,3 @@ shinyServer(function(input, output) {
     bar
   })
 })
-  
-  
-  
-  
-
-
-
-  
-
-  
