@@ -80,8 +80,22 @@ shinyUI(navbarPage(
     titlePanel("Top Song in each Country"),
     fluidPage(
         dataTableOutput("table")
-
     )
-  )
-)
-)
+  ),
+    tabPanel(
+      "Plots",
+      titlePanel("Which Artists and Songs were streamed the most?"),
+      fluidPage(
+          numericInput(
+            "top_num",
+            label = "Enter the number of artists/songs you wish to view",
+            value = 5
+          ),
+          h4("Which Artists were streamed the most?"),
+          plotOutput("streams"),
+          h4("Which Songs had the most streams?"),
+          plotOutput("song_streams")
+        )
+      )
+    )
+    )

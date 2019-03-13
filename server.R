@@ -9,6 +9,8 @@ library(songsim)
 library(syuzhet)
 library(countrycode)
 library(DT)
+library(scales)
+library(plotly)
 
 source("sentiment_func.R")
 source("sim_function.R")
@@ -41,8 +43,8 @@ shinyServer(function(input, output) {
   top_by_region <- world_top %>%
     group_by(Region) %>%
     filter(Streams == max(Streams))
-  
-  top_world_df <- data.frame(top_by_region$country_name, top_by_region$Streams, 
+
+  top_world_df <- data.frame(top_by_region$country_name, top_by_region$Streams,
                              top_by_region$Track.Name, top_by_region$Artist)
 
   output$table <- renderDataTable({
@@ -56,4 +58,69 @@ shinyServer(function(input, output) {
       )
     )
   })
+  
+  # Artists with most number of streams worldwide
+  most_streamed_artist <- reactive({
+    world_top %>%     
+      select(Track.Name, Artist, Streams, country_name) %>% 
+      group_by(Artist) %>% 
+      summarize(Streams = sum(Streams)) %>% 
+      arrange(-Streams) %>% 
+      head(input$top_num)  
+    })
+
+  output$streams <- renderPlot({
+    bar <- ggplot(most_streamed_artist(), aes(x = reorder(Artist, -Streams), y = Streams)) +    
+      labs(
+        # title = "Artists with the most streams worldwide",
+        x = "Artist",
+        y = "Streams"
+      ) + scale_y_continuous(labels = comma) +
+      geom_bar(stat = "identity", fill = "#1DB954")
+    bar
+  })
+  
+  #Songs with the most streams worldwide
+  most_streamed_song <- reactive({
+    songs <- world_top %>% 
+      select(Track.Name, Artist, Streams, country_name) %>% 
+      group_by(Track.Name) %>% 
+      summarize(Streams = sum(Streams)) 
+    songs$Artist = lapply(songs$Track.Name, artist)
+    songs$Track_Artist = paste(songs$Track.Name, "-", songs$Artist)
+    songs %>% 
+      arrange(-Streams) %>% 
+      head(input$top_num) 
+  })
+  
+  # Get track artist name
+  artist <- function(title) {
+    world_top %>% 
+      select(Track.Name, Artist) %>% 
+      filter(Track.Name == title) %>% 
+      head(1) %>% 
+      select(Artist) %>% 
+      pull(Artist)
+    }
+  
+  output$song_streams <- renderPlot({
+    bar <- ggplot(most_streamed_song(), aes(x = reorder(Track_Artist, -Streams), y = Streams)) +
+      labs(
+        # title = "Songs with the most streams worldwide",
+        x = "Track Name",
+        y = "Streams"
+      ) + scale_y_continuous(labels = comma) +
+      geom_bar(stat = "identity", fill = "#1DB954")
+    bar
+  })
 })
+  
+  
+  
+  
+
+
+
+  
+
+  
