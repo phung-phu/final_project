@@ -10,7 +10,6 @@ library(syuzhet)
 library(countrycode)
 library(DT)
 library(scales)
-library(plotly)
 
 source("sentiment_func.R")
 source("sim_function.R")
@@ -19,11 +18,9 @@ us_top <- read.csv("data/us_top200.csv", stringsAsFactors = FALSE)
 world_top <- read.csv("data/world_charts_1_9_2018.csv", stringsAsFactors = FALSE)
 world_top <- world_top %>%
   filter(Region != "global")
-world_top <- mutate(world_top, country_name = countrycode(
-  world_top$Region,
-  "iso2c", "country.name"
-))
-rep <- read.csv("repetitiveness.csv", stringsAsFactors = FALSE) %>%
+world_top <- mutate(world_top, country_name = countrycode(world_top$Region, 
+                                                          "iso2c", "country.name"))
+rep <- read.csv("repetitiveness.csv", stringsAsFactors = FALSE) %>% 
   select(Song, Artist, Repetitiveness)
 
 shinyServer(function(input, output) {
@@ -44,27 +41,25 @@ shinyServer(function(input, output) {
     get_graph(sen)
   })
   output$rep_table <- renderDataTable({
-    datatable(rep, escape = FALSE, options = list(dom = "lrtp"))
+    datatable(rep, escape = FALSE, options = list(dom = 'lrtp'))
   })
-
+  
   top_by_region <- world_top %>%
     group_by(Region) %>%
     filter(Streams == max(Streams))
-
-  top_world_df <- data.frame(
-    top_by_region$country_name, top_by_region$Streams,
-    top_by_region$Track.Name, top_by_region$Artist
-  )
-
+  
+  top_world_df <- data.frame(top_by_region$country_name, top_by_region$Streams, 
+                             top_by_region$Track.Name, top_by_region$Artist)
+  
   output$table <- renderDataTable({
     world_top_table <- datatable(top_world_df,
-      colnames = c(
-        "Country", "Streams",
-        "Title", "Artist"
-      ),
-      filter = "top", options = list(
-        pageLength = 10, autoWidth = TRUE
-      )
+                                 colnames = c(
+                                   "Country", "Streams",
+                                   "Title", "Artist"
+                                 ),
+                                 filter = "top", options = list(
+                                   pageLength = 10, autoWidth = TRUE
+                                 )
     )
   })
 
