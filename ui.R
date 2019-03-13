@@ -37,7 +37,9 @@ shinyUI(navbarPage(
       p("The popularity of music is widely spreaded, as when viewing table of 
         Top Song in Each Country, we can clearly see that the song name and artist
         shown for each country are mostly different, without much repetition.
-        Therefore, we conclude that music popularity is widespread."),
+        Therefore, we conclude that music popularity is widespread. Additionally, the
+        Plots tab part provide us an insight of which songs and artists are being
+        streamed the most, respectively."),
       h4("What makes music popular?"),
       p("Music is overall really popular as displayed on Spotify. We can determine if a song
         is popular by looking at the table analysis, where selecting different countries
@@ -58,8 +60,8 @@ shinyUI(navbarPage(
         forming data tables."),
       p("Both of our datasets were static ", code(".csv"), " files which
         meant we did not need to use APIs. Statistical analysis are done
-        by table analysis of top songs and graphs demonstrating individual
-        song analysis.")
+        by table analysis of top songs, plots part aggregating from the 
+        table analysis, and graphs demonstrating individual song analysis.")
       )
       ),
   tabPanel(
@@ -172,7 +174,7 @@ shinyUI(navbarPage(
       h2("Who We Are", align = "center"),
       h3("We are Team Starfish from Info 201 Section BE", align = "center"),
       br(),
-      h4("Meet Team Members:")
+      h4("Meet Team Members: Phung Phu, Renee Wang, Xuhua Zou, Kyle Lawrence")
     )
   )
 ))
