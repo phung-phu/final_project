@@ -67,7 +67,7 @@ shinyServer(function(input, output) {
         "Title", "Artist"
       ),
       filter = "top", options = list(
-        pageLength = 10, autoWidth = TRUE
+        dom = "lrtp", pageLength = 10, autoWidth = TRUE
       ), style = 'bootstrap'
     )
   })
