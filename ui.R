@@ -84,7 +84,7 @@ shinyUI(navbarPage(
         h2("Repetitiveness in US Top 200 on 1/9/18"),
         dataTableOutput("rep_table"),
         h3("Mood Graph Explanation"),
-        lyrics 
+        lyrics
         )
         )
           ),
@@ -113,21 +113,6 @@ shinyUI(navbarPage(
       plotOutput("song_streams")
     )
   ),
-  # tabPanel(
-  #   "Plots",
-  #   titlePanel("Which Artists and Songs were streamed the most?"),
-  #   mainPanel(
-  #     numericInput(
-  #       "top_num",
-  #       label = "Enter the number of artists/songs you wish to view",
-  #       value = 5
-  #     ),
-  #     h4("Which Artists were streamed the most?"),
-  #     plotOutput("streams"),
-  #     h4("Which Songs had the most streams?"),
-  #     plotOutput("song_streams")
-  #   )
-  # ),
   tabPanel(
     "About Us",
     titlePanel(strong("ABOUT US")),
@@ -135,9 +120,7 @@ shinyUI(navbarPage(
       h2("Who We Are", align = "center"),
       h3("We are Team Starfish from Info 201 Section BE", align = "center"),
       br(),
-      h4("Meet Team Members:")
+      h4("Meet Team Members: Phung Phu, Renee Wang, Xuhua Zou, Kyle Lawrence")
     )
   )
 ))
-
-  
