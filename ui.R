@@ -7,7 +7,6 @@ library(genius)
 library(tidyverse)
 library(songsim)
 library(plotly)
-# library(leaflet)
 library(syuzhet)
 library(DT)
 library(shinythemes)
@@ -28,7 +27,6 @@ shinyUI(fluidPage(
   tabPanel(
     "About the Project",
     mainPanel(
-      tags$hr(),
       h3("Project Description - What Questions Do We Hope to Answer?", align = "center"),
       tags$hr(),
       h4("What are some general characteristics of popular music?"),

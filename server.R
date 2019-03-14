@@ -46,7 +46,7 @@ shinyServer(function(input, output) {
     get_graph(sen)
   })
   output$rep_table <- renderDataTable({
-    datatable(rep, escape = FALSE, options = list(dom = "lrtp"), style = 'bootstrap')
+    datatable(rep, escape = FALSE, options = list(dom = "lrtp"), style = "bootstrap")
   })
 
   top_by_region <- world_top %>%
@@ -66,7 +66,7 @@ shinyServer(function(input, output) {
       ),
       filter = "top", options = list(
         pageLength = 10, autoWidth = TRUE
-      ), style = 'bootstrap'
+      ), style = "bootstrap"
     )
   })
 
@@ -125,9 +125,13 @@ shinyServer(function(input, output) {
     bar
   })
   output$dance_plot <- renderPlotly({
-    danceability_plot <- ggplot(data = top_2018,
-                                mapping = aes_string(x = input$x_var, y = "danceability",
-                                                     color = "danceability")) +
+    danceability_plot <- ggplot(
+      data = top_2018,
+      mapping = aes_string(
+        x = input$x_var, y = "danceability",
+        color = "danceability"
+      )
+    ) +
       geom_point() +
       geom_smooth()
     ggplotly(danceability_plot)
