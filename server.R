@@ -10,9 +10,11 @@ library(syuzhet)
 library(countrycode)
 library(DT)
 library(scales)
+library(plotly)
 
 source("sentiment_func.R")
 source("sim_function.R")
+source("danceability.R")
 
 us_top <- read.csv("data/us_top200.csv", stringsAsFactors = FALSE)
 world_top <- read.csv("data/world_charts_1_9_2018.csv", stringsAsFactors = FALSE)
@@ -24,6 +26,7 @@ world_top <- mutate(world_top, country_name = countrycode(
 ))
 rep <- read.csv("repetitiveness.csv", stringsAsFactors = FALSE) %>%
   select(Song, Artist, Repetitiveness)
+top_2018 <- read.csv("data/top2018.csv", stringsAsFactors = FALSE)
 
 shinyServer(function(input, output) {
   output$sim_plot <- renderPlot({
@@ -43,7 +46,7 @@ shinyServer(function(input, output) {
     get_graph(sen)
   })
   output$rep_table <- renderDataTable({
-    datatable(rep, escape = FALSE, options = list(dom = "lrtp"), style = 'bootstrap') 
+    datatable(rep, escape = FALSE, options = list(dom = "lrtp"), style = 'bootstrap')
   })
 
   top_by_region <- world_top %>%
@@ -64,7 +67,7 @@ shinyServer(function(input, output) {
       filter = "top", options = list(
         pageLength = 10, autoWidth = TRUE
       ), style = 'bootstrap'
-    ) 
+    )
   })
 
   # Artists with most number of streams worldwide
@@ -96,7 +99,7 @@ shinyServer(function(input, output) {
 
   most_streamed_song <- reactive({
     songs <- songs %>%
-      head(input$top_num) 
+      head(input$top_num)
     songs$Artist <- lapply(songs$Track.Name, artist)
     songs$Track_Artist <- paste(songs$Track.Name, "-", songs$Artist)
     songs
@@ -120,5 +123,13 @@ shinyServer(function(input, output) {
       ) + scale_y_continuous(labels = comma) +
       geom_bar(stat = "identity", fill = "#1DB954")
     bar
+  })
+  output$dance_plot <- renderPlotly({
+    danceability_plot <- ggplot(data = top_2018,
+                                mapping = aes_string(x = input$x_var, y = "danceability",
+                                                     color = "danceability")) +
+      geom_point() +
+      geom_smooth()
+    ggplotly(danceability_plot)
   })
 })

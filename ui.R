@@ -6,10 +6,11 @@ library(lintr)
 library(genius)
 library(tidyverse)
 library(songsim)
+library(plotly)
+# library(leaflet)
 library(syuzhet)
 library(DT)
 library(shinythemes)
-library(shinyWidgets)
 
 source("sim_function.R")
 source("text.R")
@@ -102,9 +103,9 @@ shinyUI(fluidPage(
         br(),
         h3("Mood Graph Explanation"),
         lyrics
-      )
-    )
-  ),
+        )
+        )
+    ),
   tabPanel(
     "Table and Plot Analysis",
     tags$div(class = "background"),
@@ -128,6 +129,25 @@ shinyUI(fluidPage(
       br(),
       h4("Which Songs had the most streams?", align = "center"),
       plotOutput("song_streams")
+    )
+  ),
+  tabPanel(
+    "Danceability",
+    titlePanel("Factors of Danceability"),
+    sidebarLayout(
+      sidebarPanel(
+        selectInput(
+          "x_var",
+          label = "Select Factor",
+          choices = c("energy", "loudness", "speechiness", "acousticness",
+                      "valence", "liveness", "tempo")
+        )
+      ),
+      mainPanel(
+        plotlyOutput("dance_plot"),
+        p("This is an interactive plot where you can select different variables and witness the effect this
+          has on the 'dancebility' of today's hottest songs. The songs used for this dataset are the Top 100 streamed songs of 2018.")
+      )
     )
   ),
   tabPanel(
