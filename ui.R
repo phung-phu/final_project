@@ -13,7 +13,7 @@ source("sim_function.R")
 source("text.R")
 
 us_top <- read.csv("data/us_top200.csv", stringsAsFactors = FALSE)
-us_top <- us_top[order(us_top$Track.Name),]
+us_top <- us_top[order(us_top$Track.Name), ]
 
 world_top <- read.csv("data/world_charts_1_9_2018.csv", stringsAsFactors = FALSE)
 
@@ -21,10 +21,10 @@ shinyUI(navbarPage(
   "Analyzing Music",
   tabPanel(
     "About the Project",
-    # tags$div(class = "background", ######
-    titlePanel("Project Overview"),
     mainPanel(
-      h3("Project Description - What Questions Do We Hope to Answer?"),
+      tags$hr(),
+      h3("Project Description - What Questions Do We Hope to Answer?", align = "center"),
+      tags$hr(),
       h4("What are some general characteristics of popular music?"),
       p(proj_descrip),
       h4("What music is popular in different countries?"),
@@ -32,14 +32,15 @@ shinyUI(navbarPage(
       h4("What makes music popular?"),
       p(music_pop),
       br(),
-      h3("Technical Description"),
+      tags$hr(),
+      h3("Technical Description", align = "center"),
+      tags$hr(),
       tech_descrip_1,
       tech_descrip_2
-      )
-      ),  #####
+    )
+  ),
   tabPanel(
     "Individual Song Analysis",
-    tags$div(class = "background"),   #######
     titlePanel("Repetition and Mood in Chart Toppers"),
     sidebarLayout(
       sidebarPanel(
@@ -50,10 +51,15 @@ shinyUI(navbarPage(
         )
       ),
       mainPanel(
-        h2("SongSim Matrix"),
+        tags$hr(),
+        h2("SongSim Matrix", align = "center"),
+        tags$hr(),
         plotOutput("sim_plot"),
-        h2("Mood Graph"),
+        tags$hr(),
+        h2("Mood Graph", align = "center"),
+        tags$hr(),
         plotOutput("mood_graph"),
+        br(),
         h3("SongSim Explanation"),
         song_sim,
         h4("Long Diagonals"),
@@ -81,18 +87,22 @@ shinyUI(navbarPage(
         rep,
         h3("Patterns Seen"),
         pattern,
-        h2("Repetitiveness in US Top 200 on 1/9/18"),
+        br(),
+        tags$hr(),
+        h2("Repetitiveness in US Top 200 on 1/9/18", align = "center"),
+        tags$hr(),
         dataTableOutput("rep_table"),
+        br(),
         h3("Mood Graph Explanation"),
         lyrics
-        )
-        )
-          ),
+      )
+    )
+  ),
   tabPanel(
     "Table and Plot Analysis",
     tags$div(class = "background"),
     tags$hr(),
-    titlePanel("Top Song in each Country"),
+    h3("Top Song in each Country", align = "center"),
     tags$hr(),
     fluidPage(
       dataTableOutput("table"),
