@@ -81,7 +81,6 @@ shinyServer(function(input, output) {
       arrange(-Streams) %>%
       head(input$top_num)
   })
-
   output$streams <- renderPlot({
     bar <- ggplot(most_streamed_artist(),
                   aes(x = reorder(Artist, -Streams), y = Streams)) +
