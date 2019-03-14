@@ -19,6 +19,7 @@ source("danceability.R")
 us_top <- read.csv("data/us_top200.csv", stringsAsFactors = FALSE)
 world_top <- read.csv("data/world_charts_1_9_2018.csv",
                       stringsAsFactors = FALSE)
+
 world_top <- world_top %>%
   filter(Region != "global")
 world_top <- mutate(world_top, country_name = countrycode(
