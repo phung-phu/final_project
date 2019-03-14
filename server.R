@@ -43,7 +43,7 @@ shinyServer(function(input, output) {
     get_graph(sen)
   })
   output$rep_table <- renderDataTable({
-    datatable(rep, escape = FALSE, options = list(dom = "lrtp"))
+    datatable(rep, escape = FALSE, options = list(dom = "lrtp"), style = 'bootstrap') 
   })
 
   top_by_region <- world_top %>%
@@ -63,8 +63,8 @@ shinyServer(function(input, output) {
       ),
       filter = "top", options = list(
         pageLength = 10, autoWidth = TRUE
-      )
-    )
+      ), style = 'bootstrap'
+    ) 
   })
 
   # Artists with most number of streams worldwide

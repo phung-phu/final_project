@@ -8,6 +8,8 @@ library(tidyverse)
 library(songsim)
 library(syuzhet)
 library(DT)
+library(shinythemes)
+library(shinyWidgets)
 
 source("sim_function.R")
 source("text.R")
@@ -17,7 +19,10 @@ us_top <- us_top[order(us_top$Track.Name), ]
 
 world_top <- read.csv("data/world_charts_1_9_2018.csv", stringsAsFactors = FALSE)
 
-shinyUI(navbarPage(
+shinyUI(fluidPage(
+  includeCSS("style.css"),
+  theme = shinytheme("cyborg"),
+  navbarPage(
   "Analyzing Music",
   tabPanel(
     "About the Project",
@@ -27,8 +32,10 @@ shinyUI(navbarPage(
       tags$hr(),
       h4("What are some general characteristics of popular music?"),
       p(proj_descrip),
+      br(),
       h4("What music is popular in different countries?"),
       p(diff_countries),
+      br(),
       h4("What makes music popular?"),
       p(music_pop),
       br(),
@@ -133,4 +140,4 @@ shinyUI(navbarPage(
       h4("Meet Team Members: Phung Phu, Renee Wang, Xuhua Zou, Kyle Lawrence")
     )
   )
-))
+)))
