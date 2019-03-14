@@ -119,8 +119,9 @@ rep <- p("Repetitiveness is simply a way to quantify the matrices formed.
 
 pattern <- p("Overall, the average repetitiveness of the songs on the US Top 200
           Chart was found to be 1.99%. This number is relatively low. However,
-             there are definitetly outliers in this dataset, and individual repetitiveness values
-             can be seen in the table below. Songs can also be played by clicking on the
+             there are definitetly outliers in this dataset, and individual
+            repetitiveness values can be seen in the table below. 
+          Songs can also be played by clicking on the
              song title in the table.")
 
 lyrics <- p(
@@ -134,7 +135,14 @@ lyrics <- p(
     href = "http://www.saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm"
   ),
   " in order to find the moods of the lyrics. For every word in a song that
-            falls in one of the 8 emotions the analysis categorizes into (anger,
-            anticipation, disgust, fear, joy, sadness, surprise, trust), a tally is added,
-            and these tallies are graphed into the mood graphs seen in this song analysis."
+            falls in one of the 8 emotions the analysis categorizes into
+            (anger, anticipation, disgust, fear, joy, sadness, surprise,
+            trust), a tally is added, and these tallies are graphed into the
+            mood graphs seen in this song analysis. Overall, moods in pop song
+            lyrics were seen to be pretty well-distributed. This was pretty
+            expected, as songs are written about a large variety of topics.
+            However, each song tended to have at least two or three strong
+            emotions, suggesting that while the actual emotions varied, pop
+            songs were similar in that the lyrics conveyed powerful 
+            emotions."
 )
