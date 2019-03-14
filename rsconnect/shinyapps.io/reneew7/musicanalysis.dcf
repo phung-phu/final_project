@@ -1,0 +1,12 @@
+name: musicanalysis
+title: musicanalysis
+username:
+account: reneew7
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 789078
+bundleId: 1938662
+url: https://reneew7.shinyapps.io/musicanalysis/
+when: 1552546243.4964
+asMultiple: FALSE
+asStatic: FALSE
