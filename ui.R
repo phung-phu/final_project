@@ -61,17 +61,17 @@ shinyUI(fluidPage(
       sidebarPanel(
         selectInput(
           "selSong",
-          label = "Select a song from the US Top 200 on 1/9/18: ",
+          label = "Select a song from the US Top 200 on 01/09/18: ",
           choices = us_top$Track.Name
         )
       ),
       mainPanel(
         tags$hr(),
-        h2("SongSim Matrix", align = "center"),
+        h3("SongSim Matrix", align = "center"),
         tags$hr(),
         plotOutput("sim_plot"),
         tags$hr(),
-        h2("Mood Graph", align = "center"),
+        h3("Mood Graph", align = "center"),
         tags$hr(),
         plotOutput("mood_graph"),
         br(),
@@ -184,7 +184,7 @@ shinyUI(fluidPage(
       p("Kyle is a senior majoring in Economics."),
       img(src = "kyle.jpg", height = 350, width = 450),
       h4("Xuhua Zou"),
-      p("Xuhua is a sophomore who intends to major in Informatics,
+      p("Xuhua is a sophomore who is interested in majoring Informatics.
         In her spare time, she likes to travel and watch movies."),
       img(src = "xuhua.jpg", height = 350, width = 350)
     )

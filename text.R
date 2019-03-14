@@ -31,18 +31,18 @@ proj_descrip <- "We answered this question by looking doing some individual song
 
 diff_countries <- "The popularity of music is pretty well-distributed,
 as when we look at the table of Top Song in Each Country, we can clearly
-see that the song name and artist
-shown for each country are mostly different, without much repetition.
-Therefore, we can conclude that music popularity is widespread, and does not
-necessarily congregate to certain specific songs. Yet at the same time, 
-we can see that we recognize a lot of these songs, demonstrating that overall
-the categories of popular music overlap enough for this recognition."
+see that the song name and artist shown for each country are mostly different, 
+without much repetition. Therefore, we can conclude that music popularity is 
+widespread, and does not necessarily congregate to certain specific songs. While
+the plots below provide us an insight of the artists that were streamed the most,
+as well as the songs that had most streams. At the same time, we can see that we 
+recognize a lot of these songs, demonstrating that overall the categories of 
+popular music overlap enough for this recognition."
 
-music_pop <- "We can determine if a song
-is popular by looking at our table analysis, where selecting different
-countries allow you to see corresponding top song lists. Songs appear
-on a country's top lists represent their popularity in that country;
-if some songs appear on the top list for multiple countries, it is an
+music_pop <- "We can determine if a song is popular by looking at our table 
+and plot analysis, where selecting different countries allow you to see corresponding 
+top song lists. Songs appear on a country's top lists represent their popularity 
+in that country; if some songs appear on the top list for multiple countries, it is an
 illustration that they are in high popularity in specific time among the world."
 
 dance <- "At the same time, we also looked at danceability in popular music
@@ -81,16 +81,15 @@ tech_descrip_1 <- p(
   code("syuzhet"), ", ", code("countrycode"), ", and ",
   code("DT"), "to complete this project. ", code("genius"),
   " was helpful in particular because it gathered lyrics for each song,
-                    which we could then do a lot with, such as repetition 
-  analysis with ",
+  which we could then do a lot with, such as repetition analysis with ",
   code("songsim"), " and mood analysis with ", code("syuzhet"),
-  ". Other packages helped us with wrangling the data and then
-                    forming data tables."
+  ". Other packages helped us with wrangling the data and then forming data tables."
 )
+
 tech_descrip_2 <- p("Both of our datasets were static ", code(".csv"), " files which
-        meant we did not need to use APIs. Statistical analysis are done
-                      by table analysis of top songs and graphs demonstrating
-individual song analysis.")
+                    meant we did not need to use APIs. Statistical analysis are done
+                    by table and plot analysis of top songs, danceability graphs, and 
+                    graphs demonstrating individual song analysis.")
 
 song_sim <- p(
   "A SongSim Matrix is a particular way to visualize a song.
