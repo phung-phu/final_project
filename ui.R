@@ -18,7 +18,8 @@ source("text.R")
 us_top <- read.csv("data/us_top200.csv", stringsAsFactors = FALSE)
 us_top <- us_top[order(us_top$Track.Name), ]
 
-world_top <- read.csv("data/world_charts_1_9_2018.csv", stringsAsFactors = FALSE)
+world_top <- read.csv("data/world_charts_1_9_2018.csv", 
+                      stringsAsFactors = FALSE)
 
 shinyUI(fluidPage(
   includeCSS("style.css"),
@@ -29,7 +30,8 @@ shinyUI(fluidPage(
     "About the Project",
     mainPanel(
       tags$hr(),
-      h3("Project Description - What Questions Do We Hope to Answer?", align = "center"),
+      h3("Project Description - What Questions Do We Hope to Answer?", 
+         align = "center"),
       tags$hr(),
       h4("What are some general characteristics of popular music?"),
       p(proj_descrip),
@@ -39,8 +41,11 @@ shinyUI(fluidPage(
       br(),
       h4("What makes music popular?"),
       p(music_pop),
+      p(dance),
       br(),
       tags$hr(),
+      h3("Our Data", align = "center"),
+      about_data,
       h3("Technical Description", align = "center"),
       tags$hr(),
       tech_descrip_1,
@@ -114,6 +119,7 @@ shinyUI(fluidPage(
     tags$hr(),
     fluidPage(
       dataTableOutput("table"),
+      p(countries),
       br(),
       tags$hr(),
       h3("Which Artists and Songs were streamed the most?", align = "center"),
@@ -128,7 +134,8 @@ shinyUI(fluidPage(
       plotOutput("streams"),
       br(),
       h4("Which Songs had the most streams?", align = "center"),
-      plotOutput("song_streams")
+      plotOutput("song_streams"),
+      p(list_artists)
     )
   ),
   tabPanel(
@@ -139,14 +146,17 @@ shinyUI(fluidPage(
         selectInput(
           "x_var",
           label = "Select Factor",
-          choices = c("energy", "loudness", "speechiness", "acousticness",
-                      "valence", "liveness", "tempo")
+          choices = c("energy", "loudness", "speechiness", 
+                      "acousticness", "valence", "liveness", "tempo")
         )
       ),
       mainPanel(
         plotlyOutput("dance_plot"),
-        p("This is an interactive plot where you can select different variables and witness the effect this
-          has on the 'dancebility' of today's hottest songs. The songs used for this dataset are the Top 100 streamed songs of 2018.")
+        p("This is an interactive plot where you can select different
+          variables and witness the effect this
+          has on the 'dancebility' of today's hottest songs. The songs
+          used for this dataset are the Top 100 streamed songs of 2018."),
+        p(dance_page)
       )
     )
   ),
@@ -157,7 +167,22 @@ shinyUI(fluidPage(
       h2("Who We Are", align = "center"),
       h3("We are Team Starfish from Info 201 Section BE", align = "center"),
       br(),
-      h4("Meet Team Members: Phung Phu, Renee Wang, Xuhua Zou, Kyle Lawrence")
+      h4("Meet Team Members: Phung Phu, Renee Wang, Xuhua Zou, Kyle Lawrence"),
+      h4("Phung Phu"),
+      p("Phung is a sophomore in Civil Engineering."),
+      img(src = "phung.jpg", height = 350, width = 400),
+      h4("Renee Wang"),
+      p("Renee is a freshman who is interested in majoring in Computer
+        or Electrical Engineering. In her spare time, she likes to ride
+        horses and listen to music."),
+      img(src = "renee.png", height = 350, width = 500),
+      h4("Kyle Lawrence"),
+      p("Kyle is a senior majoring in Economics."),
+      img(src = "kyle.jpg", height = 350, width = 450),
+      h4("Xuhua Zou"),
+      p("Xuhua is a sophomore who intends to major in Informatics,
+        In her spare time, she likes to travel and watch movies."),
+      img(src = "xuhua.jpg", height = 350, width = 350)
     )
   )
 )))

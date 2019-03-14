@@ -17,7 +17,8 @@ source("sim_function.R")
 source("danceability.R")
 
 us_top <- read.csv("data/us_top200.csv", stringsAsFactors = FALSE)
-world_top <- read.csv("data/world_charts_1_9_2018.csv", stringsAsFactors = FALSE)
+world_top <- read.csv("data/world_charts_1_9_2018.csv", 
+                      stringsAsFactors = FALSE)
 world_top <- world_top %>%
   filter(Region != "global")
 world_top <- mutate(world_top, country_name = countrycode(
@@ -46,7 +47,8 @@ shinyServer(function(input, output) {
     get_graph(sen)
   })
   output$rep_table <- renderDataTable({
-    datatable(rep, escape = FALSE, options = list(dom = "lrtp"), style = 'bootstrap')
+    datatable(rep, escape = FALSE, options = list(dom = "lrtp"), 
+              style = 'bootstrap')
   })
 
   top_by_region <- world_top %>%
@@ -81,7 +83,8 @@ shinyServer(function(input, output) {
   })
 
   output$streams <- renderPlot({
-    bar <- ggplot(most_streamed_artist(), aes(x = reorder(Artist, -Streams), y = Streams)) +
+    bar <- ggplot(most_streamed_artist(), 
+                  aes(x = reorder(Artist, -Streams), y = Streams)) +
       labs(
         x = "Artist",
         y = "Streams"
@@ -116,7 +119,8 @@ shinyServer(function(input, output) {
   }
 
   output$song_streams <- renderPlot({
-    bar <- ggplot(most_streamed_song(), aes(x = reorder(Track_Artist, -Streams), y = Streams)) +
+    bar <- ggplot(most_streamed_song(), 
+                  aes(x = reorder(Track_Artist, -Streams), y = Streams)) +
       labs(
         x = "Track Name",
         y = "Streams"
@@ -126,8 +130,8 @@ shinyServer(function(input, output) {
   })
   output$dance_plot <- renderPlotly({
     danceability_plot <- ggplot(data = top_2018,
-                                mapping = aes_string(x = input$x_var, y = "danceability",
-                                                     color = "danceability")) +
+                  mapping = aes_string(x = input$x_var, y = "danceability",
+                                                color = "danceability")) +
       geom_point() +
       geom_smooth()
     ggplotly(danceability_plot)
