@@ -85,16 +85,19 @@ shinyServer(function(input, output) {
   })
 
   # Songs with the most streams worldwide
+  
+  songs <- world_top %>%
+    select(Track.Name, Artist, Streams, country_name) %>%
+    group_by(Track.Name) %>%
+    summarize(Streams = sum(Streams)) %>% 
+    arrange(-Streams)
+  
   most_streamed_song <- reactive({
-    songs <- world_top %>%
-      select(Track.Name, Artist, Streams, country_name) %>%
-      group_by(Track.Name) %>%
-      summarize(Streams = sum(Streams))
-    songs$Artist <- lapply(songs$Track.Name, artist)
-    songs$Track_Artist <- paste(songs$Track.Name, "-", songs$Artist)
-    songs %>%
-      arrange(-Streams) %>%
-      head(input$top_num)
+    songs <- songs %>%
+      head(input$top_num) # input$top_num
+      songs$Artist <- lapply(songs$Track.Name, artist)
+      songs$Track_Artist <- paste(songs$Track.Name, "-", songs$Artist)
+      songs
   })
 
   # Get track artist name
@@ -107,7 +110,7 @@ shinyServer(function(input, output) {
       pull(Artist)
   }
 
-  output$song_streams <- renderPlot({
+  output$song_streams <- renderPlot({ 
     bar <- ggplot(most_streamed_song(), aes(x = reorder(Track_Artist, -Streams), y = Streams)) +
       labs(
         # title = "Songs with the most streams worldwide",
