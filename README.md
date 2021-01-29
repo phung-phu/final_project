@@ -2,6 +2,8 @@
 By Team Starfish: Phung Phu, Renee Wang, Xuhua Zou, Kyle Lawrence
 
 ## Project Description
+## Analyzing Music
+The web app is viewable at: https://reneew7.shinyapps.io/musicanalysis/
 
 #### Our Datasets
 We will be looking at a data set containing information on [Spotify's Worldwide Daily Song Ranking](https://www.kaggle.com/edumucelli/spotifys-worldwide-daily-song-ranking)
